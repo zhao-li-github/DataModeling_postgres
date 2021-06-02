@@ -10,16 +10,15 @@ The data in this project reside in two datasets:
 ### Song dataset: 
 A directory with JSON metadata on the songs in their app.
 This is a subset of real data from the [Million Song Dataset](http://millionsongdataset.com/). Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset:
-> song_data/A/B/C/TRABCEI128F424C983.json
+> song_data/A/B/C/TRABCEI128F424C983.json   
 > song_data/A/A/B/TRAABJL12903CDCF1A.json
 
 ### Log dataset:
 A directory of JSON logs on user activity on the app.
 
 ## Schema
-A star schema is defined to optimize data write times by reducing duplicate data entris:
+A star schema is defined to optimize data write times by reducing duplicate data entris. It contains 1 fact table (songplays) and 4 dimension tables (songs, artists, time, and users):
 ![image](https://user-images.githubusercontent.com/60242372/120561899-41311080-c3ba-11eb-9497-496e10575a54.png)
-### Fact table: songplays
 
 
 ## Running the ETL pipeline
