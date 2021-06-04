@@ -35,3 +35,12 @@ A star schema is defined to optimize data write times by reducing duplicate data
 3. Start and run `etl.ipynb` to ensure the transformation and loading scripts work for a single song and log file. Shut down the kernel and close the notebook.   
 4. Run `create_tables.py` to reset the database.   
 5. Run `etl.py` to start the ETL data pipeline and process the entire JSON databases to the Sparkify database.   
+
+## Note    
+If connection error is raised, try the following in terminal:    
+`psql postgres`    
+Then `CREATE ROLE student WITH LOGIN PASSWORD 'student';`    
+`ALTER ROLE student CREATEDB;`    
+`\du` (to check if the role is created and the attributes)    
+`\q`    
+Then in `create_tables.py` change the connect part into `conn = psycopg2.connect("host='localhost' dbname='postgres' user=student password=student")` and run.
