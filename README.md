@@ -43,4 +43,5 @@ Then `CREATE ROLE student WITH LOGIN PASSWORD 'student';`
 `ALTER ROLE student CREATEDB;`    
 `\du` (to check if the role is created and the attributes)    
 `\q`    
-Then in `create_tables.py` change the connect part into `conn = psycopg2.connect("host='localhost' dbname='postgres' user=student password=student")` and run.
+Then in `create_tables.py` change the connect part into `conn = psycopg2.connect("host='localhost' dbname='postgres' user=student password=student")` and run.   
+Ref: https://www.sqlshack.com/setting-up-a-postgresql-database-on-mac/
